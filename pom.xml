@@ -23,6 +23,11 @@
       <name>Martin Wittlinger</name>
     </developer>
   </developers>
+  <scm>
+    <connection>scm:git:https://github.com/MartinWitt/github-action-parser</connection>
+    <developerConnection>scm:git:https://github.com/MartinWitt/github-action-parser.git</developerConnection>
+    <url>https://github.com/MartinWitt/github-action-parser/</url>
+  </scm>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
