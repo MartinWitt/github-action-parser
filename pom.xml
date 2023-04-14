@@ -7,8 +7,27 @@
   <version>0.0.1-SNAPSHOT</version>
 
   <name>github_action_parser</name>
+  <description>A java library to parser github workflow files</description>
   <url>https://github.com/MartinWitt/github-action-parser/</url>
-
+  <inceptionYear>2023</inceptionYear>
+  <licenses>
+    <license>
+      <name>MIT</name>
+      <url>https://opensource.org/licenses/MIT</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>MartinWitt</id>
+      <name>Martin Wittlinger</name>
+    </developer>
+  </developers>
+  <scm>
+    <connection>scm:git:https://github.com/MartinWitt/github-action-parser</connection>
+    <developerConnection>scm:git:https://github.com/MartinWitt/github-action-parser.git</developerConnection>
+    <url>https://github.com/MartinWitt/github-action-parser/</url>
+  </scm>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>11</maven.compiler.source>
