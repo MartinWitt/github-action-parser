@@ -7,8 +7,8 @@
   <version>0.0.1-SNAPSHOT</version>
 
   <name>github_action_parser</name>
-  <url>https://github.com/MartinWitt/github-action-parser/</url>
   <description>A java library to parser github workflow files</description>
+  <url>https://github.com/MartinWitt/github-action-parser/</url>
   <inceptionYear>2023</inceptionYear>
   <licenses>
     <license>
@@ -25,8 +25,7 @@
   </developers>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>
-      11</maven.compiler.source>
+    <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
   </properties>
 
@@ -72,15 +71,13 @@
           <formats>
             <format>
               <includes>
-                <include>
-                  *.md</include>
+                <include>*.md</include>
                 <include>.gitignore</include>
               </includes>
               <trimTrailingWhitespace></trimTrailingWhitespace>
               <endWithNewline></endWithNewline>
               <indent>
-                <tabs>
-                  false</tabs>
+                <tabs>false</tabs>
                 <spaces>true</spaces>
                 <spacesPerTab>4</spacesPerTab>
               </indent>
@@ -91,8 +88,7 @@
           </java>
           <pom>
             <includes>
-              <include>
-                pom.xml</include>
+              <include>pom.xml</include>
             </includes>
             <sortPom></sortPom>
           </pom>
