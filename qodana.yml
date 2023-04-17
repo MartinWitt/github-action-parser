@@ -66,3 +66,6 @@ include:
 exclude:
   - name: UseOfClone
   - name: UnstableApiUsage
+  - name: All
+    paths:
+      - src/main/java/io/github/martinwitt/github_action_parser/data

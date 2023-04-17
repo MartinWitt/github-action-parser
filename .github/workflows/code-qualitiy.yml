@@ -40,3 +40,22 @@ jobs:
       - uses: github/codeql-action/upload-sarif@7df0ce34898d659f95c0c4a09eaa8d4e32ee64db # v2
         with:
           sarif_file: ${{ runner.temp }}/qodana/results/qodana.sarif.json
+  generate-code:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3
+      - name: Set up JDK 11
+        uses: actions/setup-java@5ffc13f4174014e2d4d4572b3d74c3fa61aeb2c2 # v3
+        with:
+          java-version: '11'
+          distribution: 'temurin'
+      - name: Set up Maven
+        uses: stCarolas/setup-maven@07fbbe97d97ef44336b7382563d66743297e442f # v4.5
+        with:
+          maven-version: 3.9.0
+      - name: Generate code
+        run: mvn clean package
+      - name: mvn spotless:apply
+        run: mvn spotless:apply
+      - name: Check if code is generated
+        run: git diff --exit-code src/main/java/ 

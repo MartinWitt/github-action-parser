@@ -2,7 +2,7 @@ package io.github.martinwitt.github_action_parser.testutils;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
-import io.github.martinwitt.github_action_parser.data.Workflow;
+import io.github.martinwitt.github_action_parser.data.GitHubWorkflow;
 import java.io.IOException;
 import java.lang.reflect.Executable;
 import java.nio.file.Files;
@@ -23,7 +23,7 @@ public class WorkflowParameterResolver implements ParameterResolver {
             throw new ParameterResolutionException("No WorkflowTest annotation found");
         }
         Class<?> parameterType = parameterContext.getParameter().getType();
-        return parameterType == Workflow.class;
+        return parameterType == GitHubWorkflow.class;
     }
 
     @Override
@@ -33,7 +33,7 @@ public class WorkflowParameterResolver implements ParameterResolver {
         var workflowTest = method.getAnnotation(WorkflowTest.class);
         String path = workflowTest.path();
         try {
-            return MAPPER.readValue(Files.readString(Path.of(path)), Workflow.class);
+            return MAPPER.readValue(Files.readString(Path.of(path)), GitHubWorkflow.class);
         } catch (IOException e) {
             throw new ParameterResolutionException("Could not read workflow file", e);
         }
