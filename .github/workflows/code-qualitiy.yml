@@ -56,4 +56,4 @@ jobs:
       - name: Generate code
         run: mvn clean package
       - name: Check if code is generated
-        run: git diff src/main/java/ --exit-code
+        run: git diff --exit-code src/main/java/ 
