@@ -2,7 +2,7 @@ package io.github.martinwitt.github_action_parser.header;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import io.github.martinwitt.github_action_parser.data.Githubaction;
+import io.github.martinwitt.github_action_parser.data.GitHubWorkflow;
 import io.github.martinwitt.github_action_parser.testutils.WorkflowTest;
 
 /**
@@ -11,7 +11,7 @@ import io.github.martinwitt.github_action_parser.testutils.WorkflowTest;
 class WorkflowNameTest {
 
     @WorkflowTest(path = "src/test/resources/header/WorflowWithName.yml")
-    void testWorkflowName(Githubaction workflow) {
+    void testWorkflowName(GitHubWorkflow workflow) {
         assertEquals("Release", workflow.getName());
     }
 }

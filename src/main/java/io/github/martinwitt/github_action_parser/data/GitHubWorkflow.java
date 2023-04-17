@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 /**
  * Github workflow file - https://help.github.com/en/articles/workflow-syntax-for-github-actions
  * <p>
- * 
+ * This defines the schema for a Github workflow file
  * 
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -24,7 +24,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "on",
     "jobs"
 })
-public class Generate {
+public class GitHubWorkflow {
 
     /**
      * The name of your workflow. GitHub displays the names of your workflows on your repository's actions page. If you omit this field, GitHub sets the name to the workflow's filename.
@@ -42,11 +42,11 @@ public class Generate {
     @JsonPropertyDescription("The name of the GitHub event that triggers the workflow")
     private Object on;
     /**
-     * A workflow run is made up of one or more jobs. Jobs run in parallel by default. To run jobs sequentially, you can define dependencies on other jobs using the jobs.<job_id>.needs keyword.
+     * A workflow run is made up of one or more jobs. Jobs run in parallel by default. To run jobs sequentially, you can define dependencies on other jobs using the {@code jobs.<job_id>.needs} keyword.
      * 
      */
     @JsonProperty("jobs")
-    @JsonPropertyDescription("A workflow run is made up of one or more jobs. Jobs run in parallel by default. To run jobs sequentially, you can define dependencies on other jobs using the jobs.<job_id>.needs keyword.")
+    @JsonPropertyDescription("A workflow run is made up of one or more jobs. Jobs run in parallel by default. To run jobs sequentially, you can define dependencies on other jobs using the {@code jobs.<job_id>.needs} keyword.")
     private Jobs jobs;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
@@ -90,7 +90,7 @@ public class Generate {
     }
 
     /**
-     * A workflow run is made up of one or more jobs. Jobs run in parallel by default. To run jobs sequentially, you can define dependencies on other jobs using the jobs.<job_id>.needs keyword.
+     * A workflow run is made up of one or more jobs. Jobs run in parallel by default. To run jobs sequentially, you can define dependencies on other jobs using the {@code jobs.<job_id>.needs} keyword.
      * 
      */
     @JsonProperty("jobs")
@@ -99,7 +99,7 @@ public class Generate {
     }
 
     /**
-     * A workflow run is made up of one or more jobs. Jobs run in parallel by default. To run jobs sequentially, you can define dependencies on other jobs using the jobs.<job_id>.needs keyword.
+     * A workflow run is made up of one or more jobs. Jobs run in parallel by default. To run jobs sequentially, you can define dependencies on other jobs using the {@code jobs.<job_id>.needs} keyword.
      * 
      */
     @JsonProperty("jobs")
@@ -120,7 +120,7 @@ public class Generate {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(Generate.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
+        sb.append(GitHubWorkflow.class.getName()).append('@').append(Integer.toHexString(System.identityHashCode(this))).append('[');
         sb.append("name");
         sb.append('=');
         sb.append(((this.name == null)?"<null>":this.name));
@@ -160,10 +160,10 @@ public class Generate {
         if (other == this) {
             return true;
         }
-        if ((other instanceof Generate) == false) {
+        if ((other instanceof GitHubWorkflow) == false) {
             return false;
         }
-        Generate rhs = ((Generate) other);
+        GitHubWorkflow rhs = ((GitHubWorkflow) other);
         return (((((this.name == rhs.name)||((this.name!= null)&&this.name.equals(rhs.name)))&&((this.additionalProperties == rhs.additionalProperties)||((this.additionalProperties!= null)&&this.additionalProperties.equals(rhs.additionalProperties))))&&((this.on == rhs.on)||((this.on!= null)&&this.on.equals(rhs.on))))&&((this.jobs == rhs.jobs)||((this.jobs!= null)&&this.jobs.equals(rhs.jobs))));
     }
 

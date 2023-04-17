@@ -1,6 +1,7 @@
 {
   "title": "Github workflow file - https://help.github.com/en/articles/workflow-syntax-for-github-actions",
   "$schema": "http://json-schema.org/draft-07/schema#",
+  "description": "This defines the schema for a Github workflow file",
   "type": "object",
   "required": [
     "on"
@@ -68,11 +69,11 @@
       ]
     },
     "jobs": {
-      "description": "A workflow run is made up of one or more jobs. Jobs run in parallel by default. To run jobs sequentially, you can define dependencies on other jobs using the jobs.<job_id>.needs keyword.",
+      "description": "A workflow run is made up of one or more jobs. Jobs run in parallel by default. To run jobs sequentially, you can define dependencies on other jobs using the {@code jobs.<job_id>.needs} keyword.",
       "type": "object",
       "additionalProperties": {
         "type": "object",
-        "description": "Each job must have an id to associate with the job. The key job_id is a string and its value is a map of the job's configuration data. You must replace <job_id> with a string that is unique to the jobs object. The <job_id> must start with a letter or _ and contain only alphanumeric characters, -, or _.",
+        "description": "Each job must have an id to associate with the job. The key job_id is a string and its value is a map of the job's configuration data. You must replace {@code <job_id>} with a string that is unique to the jobs object. The {@code <job_id>} must start with a letter or _ and contain only alphanumeric characters, -, or _.",
         "required": [
           "runs-on"
         ],
