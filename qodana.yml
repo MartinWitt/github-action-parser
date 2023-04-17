@@ -68,4 +68,4 @@ exclude:
   - name: UnstableApiUsage
   - name: All
     paths:
-      - src/io/github/martinwitt/github_action_parser/data
+      - src/main/java/io/github/martinwitt/github_action_parser/data
