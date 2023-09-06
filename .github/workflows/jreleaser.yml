@@ -50,7 +50,7 @@ jobs:
         if: ${{ github.event.inputs.version == 'major'  || github.event.inputs.version == 'minor' }}
         run: echo "NEXT_VERSION=$(semver next ${{ github.event.inputs.version }} $CURRENT_VERSION)" >> $GITHUB_ENV
       - name: run maven-lockfile
-        uses: chains-project/maven-lockfile@e2e52caf7a33df02fb4cf8f4597b8ab9d86bb911 # v1.3.0
+        uses: chains-project/maven-lockfile@6ba071fadbf9abc926097bf19a33a16a5272f608 # v4.2.2
         with:
             github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Set release version
