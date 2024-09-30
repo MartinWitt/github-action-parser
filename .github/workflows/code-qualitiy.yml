@@ -37,7 +37,7 @@ jobs:
           fetch-depth: 0
       - name: 'Qodana Scan'
         uses: JetBrains/qodana-action@7afb26c0c2f325c0d5c21ea1f617c79c7f899337 # v2022.3.4
-      - uses: github/codeql-action/upload-sarif@d97ba04b39135f37e9d60c84a6995bb18b7ac328 # v2
+      - uses: github/codeql-action/upload-sarif@85b07cf1e13dd512be7c27c37a33c5864c252fcc # v2
         with:
           sarif_file: ${{ runner.temp }}/qodana/results/qodana.sarif.json
   generate-code:
