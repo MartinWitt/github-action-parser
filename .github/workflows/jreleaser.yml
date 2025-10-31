@@ -113,7 +113,7 @@ jobs:
 # Log failure:
       - name: JReleaser release output
         if: always()
-        uses: actions/upload-artifact@ff15f0306b3f739f7b6fd43fb5d26cd321bd4de5 # v3
+        uses: actions/upload-artifact@330a01c490aca151604b8cf639adc76d48f6c5d4 # v5
         with:
           name: jreleaser-release
           path: |
